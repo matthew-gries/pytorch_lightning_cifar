@@ -82,7 +82,7 @@ class CIFARClassifierModule(pl.LightningModule):
             "test_precision": prec,
             "test_recall": recall
         }
-        self.log_dict(metrics)
+        self.log_dict(metrics, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         return metrics
 
 
